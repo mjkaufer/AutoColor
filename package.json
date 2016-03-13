@@ -1,0 +1,24 @@
+{
+  "name": "autocolor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjkaufer/AutoColor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjkaufer/AutoColor/issues"
+  },
+  "homepage": "https://github.com/mjkaufer/AutoColor#readme",
+  "dependencies": {
+    "colornames": "^1.1.1",
+    "facebook-chat-api": "^1.0.7",
+    "prompt": "^1.0.0"
+  }
+}
