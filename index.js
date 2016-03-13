@@ -31,6 +31,15 @@ function authenticate(credentials){//where credentials is the user's credentials
 		})
 
 		var colorArr = toHex.all()
+		colorArr.push({
+			value: "#FFFFFF",
+			name: "Matthew"
+		})
+		
+		colorArr = colorArr.sort(function(e, f){
+			return f.name.length - e.name.length
+		})
+
 		console.log(Object.keys(api))
 
 		api.listen(function cb(err, message) {
