@@ -35,6 +35,11 @@ function authenticate(credentials){//where credentials is the user's credentials
 			value: "#FFFFFF",
 			name: "Matthew"
 		})
+
+		var emojiMap = {
+			"squid": "🐙",
+			"corn": "🌽"
+		}
 		
 		colorArr = colorArr.sort(function(e, f){
 			return f.name.length - e.name.length
@@ -46,11 +51,25 @@ function authenticate(credentials){//where credentials is the user's credentials
 			if(err)
 				return console.log(err)
 			
-			console.log("new message")
 			var messageBody = message.body.trim().toLowerCase()
+
+			for(var i = 0; i < Object.keys(emojiMap).length; i++){
+				var key = Object.keys(emojiMap)[i]
+				if(messageBody.indexOf(key) > -1){
+					api.changeThreadEmoji(emojiMap[key], message.threadID, function(e){
+						if(e) console.log(e)
+						console.log("set emoji to",key,"with",message.participantNames)
+					})
+					i = Object.keys(emojiMap).length
+				}
+
+			}
+
+
 
 			for(var i = 0; i < colorArr.length; i++){
 				var colorName = colorArr[i].name.toLowerCase()
+
 
 				if(messageBody.indexOf(colorName) > -1){
 					console.log(i,"Changing chat color with",message.participantNames,"to",colorName,colorArr[i].value)
@@ -62,6 +81,7 @@ function authenticate(credentials){//where credentials is the user's credentials
 					i = colorArr.length
 					return true
 				}
+
 			}
 
 			return true
