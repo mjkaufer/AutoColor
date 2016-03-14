@@ -38,8 +38,16 @@ function authenticate(credentials){//where credentials is the user's credentials
 
 		var emojiMap = {
 			"squid": "🐙",
-			"corn": "🌽"
+			"bird": "🐦",
+			"eggplant": "🍆",
+			"hundred": "💯",
+			"monkey": "🙉",
+			"burger": "🍔"
 		}
+
+		var imRegex = /(im|i'm){1}(.*)/gi;
+
+
 		
 		colorArr = colorArr.sort(function(e, f){
 			return f.name.length - e.name.length
