@@ -40,9 +40,10 @@ function authenticate(credentials){//where credentials is the user's credentials
 			"squid": "🐙",
 			"bird": "🐦",
 			"eggplant": "🍆",
-			"hundred": "💯",
-			"monkey": "🙉",
-			"burger": "🍔"
+			"burger": "🍔",
+			"panda": "🐼",
+			"bunny": "🐰",
+			"cookie": "🍪"
 		}
 
 		var imRegex = /(im|i'm){1}(.*)/gi;
